@@ -10,5 +10,6 @@ package com.mycompany.trabalho;
  * @author RUBEUS
  */
 public class Curso {
-    
+    private String nome;
+  
 }

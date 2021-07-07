@@ -10,5 +10,7 @@ package com.mycompany.trabalho;
  * @author RUBEUS
  */
 public class Aluno {
-    string nome;
+   private String nome;
+   private String senha;
+   private String matricula;
 }
