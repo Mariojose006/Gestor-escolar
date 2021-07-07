@@ -5,14 +5,17 @@
  */
 package com.mycompany.trabalho;
 
+ 
 /**
  *
  * @author RUBEUS
  */
 public class Aluno extends Pessoa{
    
-    public Aluno(String nome, String email, String telefone, String login, String senha) {
-        super(nome, email, telefone, login, senha);
-    }
+   private Curso curso;  
 
+    public Aluno(Curso curso, String nome, String email, String telefone, String login, String senha) {
+        super(nome, email, telefone, login, senha);
+        this.curso = curso;
+    }
 }

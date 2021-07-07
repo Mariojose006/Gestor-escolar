@@ -12,4 +12,12 @@ package com.mycompany.trabalho;
 public class Disciplina {
     private String nome;
     private String horario;
+    private Professor professor; 
+
+    public Disciplina(String nome, String horario, Professor professor) {
+        this.nome = nome;
+        this.horario = horario;
+        this.professor = professor;
+    }
+    
 }

@@ -5,11 +5,14 @@
  */
 package com.mycompany.trabalho;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author RUBEUS
  */
 public class Curso {
     private String nome;
-  
+    ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
+     
 }
