@@ -5,6 +5,14 @@
  */
 package com.mycompany.trabalho;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 /**
  *
  * @author adrian
@@ -13,12 +21,41 @@ public class entidades {
 
     public entidades() {
     }
-    
-    public static void leitura(String caminho,String valor){
-        //leitura de arquivos
-    }
-    
-    public static void escrita(String caminho, String valor){
+
+    public static void escrever(String valor[], String classe, int n) throws IOException {
         
+        int i; 
+        FileWriter arq = new FileWriter("d:\\" + classe + ".txt");
+        PrintWriter gravarArq = new PrintWriter(arq);
+
+        for (i = 1; i <= n; i++) {
+            gravarArq.printf("%n", valor[i]);
+        }
+        arq.close();
+
+        System.out.printf("\nOs dados da classe " + classe + "  \"d:\\" + classe +".txt  \".\n");
+    }
+
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        System.out.printf("Informe o nome de um arquivo ou diretório:\n");
+        String nome = ler.nextLine();
+
+        File objFile = new File(nome);
+        if (objFile.exists()) {
+            if (objFile.isFile()) {
+                System.out.printf("\nArquivo (%s) existe - tamanho: %d bytes\n",
+                        objFile.getName(), objFile.length());
+            } else {
+                System.out.printf("\nConteúdo do diretório:\n");
+                String diretorio[] = objFile.list();
+                for (String item : diretorio) {
+                    System.out.printf("%s\n", item);
+                }
+            }
+        } else {
+            System.out.printf("Erro: arquivo ou diretório informado não existe!\n");
+        }
     }
 }
