@@ -29,33 +29,15 @@ public class entidades {
         PrintWriter gravarArq = new PrintWriter(arq);
 
         for (i = 1; i <= n; i++) {
-            gravarArq.printf("%n", valor[i]);
+            gravarArq.printf("%n", valor[i] + ";");
         }
         arq.close();
 
         System.out.printf("\nOs dados da classe " + classe + "  \"d:\\" + classe +".txt  \".\n");
     }
 
-    public static void main(String[] args) {
-        Scanner ler = new Scanner(System.in);
+   public static void escrever(String valor[]) throws IOException {
+       //leitura do arquivo
+   }
+   }
 
-        System.out.printf("Informe o nome de um arquivo ou diretório:\n");
-        String nome = ler.nextLine();
-
-        File objFile = new File(nome);
-        if (objFile.exists()) {
-            if (objFile.isFile()) {
-                System.out.printf("\nArquivo (%s) existe - tamanho: %d bytes\n",
-                        objFile.getName(), objFile.length());
-            } else {
-                System.out.printf("\nConteúdo do diretório:\n");
-                String diretorio[] = objFile.list();
-                for (String item : diretorio) {
-                    System.out.printf("%s\n", item);
-                }
-            }
-        } else {
-            System.out.printf("Erro: arquivo ou diretório informado não existe!\n");
-        }
-    }
-}
