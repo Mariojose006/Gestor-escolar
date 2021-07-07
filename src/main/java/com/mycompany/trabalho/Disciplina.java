@@ -11,4 +11,5 @@ package com.mycompany.trabalho;
  */
 public class Disciplina {
     private String nome;
+    private String horario;
 }
