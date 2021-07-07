@@ -9,10 +9,9 @@ package com.mycompany.trabalho;
  *
  * @author RUBEUS
  */
-public class Aluno extends Pessoa{
-   
-    public Aluno(String nome, String email, String telefone, String login, String senha) {
+public class Administrador extends Pessoa{
+    
+    public Administrador(String nome, String email, String telefone, String login, String senha) {
         super(nome, email, telefone, login, senha);
     }
-
 }
