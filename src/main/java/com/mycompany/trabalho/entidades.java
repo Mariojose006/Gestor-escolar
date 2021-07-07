@@ -7,12 +7,18 @@ package com.mycompany.trabalho;
 
 /**
  *
- * @author RUBEUS
+ * @author adrian
  */
-public class Professor extends Pessoa{
-    
-    public Professor(String nome, String email, String telefone, String login, String senha) {
-        super(nome, email, telefone, login, senha);
+public class entidades {
+
+    public entidades() {
     }
     
+    public static void leitura(String caminho,String valor){
+        //leitura de arquivos
+    }
+    
+    public static void escrita(String caminho, String valor){
+        
+    }
 }
