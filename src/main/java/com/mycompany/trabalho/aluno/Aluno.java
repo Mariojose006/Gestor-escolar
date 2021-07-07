@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.trabalho;
+package com.mycompany.trabalho.aluno;
+
+import com.mycompany.trabalho.Curso;
+import com.mycompany.trabalho.Pessoa;
 
  
 /**

@@ -5,6 +5,8 @@
  */
 package com.mycompany.trabalho;
 
+import com.mycompany.trabalho.professor.Professor;
+
 /**
  *
  * @author RUBEUS
