@@ -13,6 +13,15 @@ import java.util.ArrayList;
  */
 public class Curso {
     private String nome;
-    ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
-     
+    private ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
+
+    public String getNome() {
+        return nome;
+    }
+
+    public ArrayList<Disciplina> getDisciplina() {
+        return disciplina;
+    }
+    
+    
 }

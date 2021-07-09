@@ -21,5 +21,30 @@ public class Disciplina {
         this.horario = horario;
         this.professor = professor;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+    
     
 }
