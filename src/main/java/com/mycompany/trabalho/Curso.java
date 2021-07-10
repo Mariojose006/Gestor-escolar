@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class Curso {
     private String nome;
+    
     private ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
 
     public String getNome() {
