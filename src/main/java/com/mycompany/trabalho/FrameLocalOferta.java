@@ -1,14 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Ádrian Pereira Machado - 201965001AB
+   Mário José da Silva Neto - 201965507B
  */
 package com.mycompany.trabalho;
 
-/**
- *
- * @author RUBEUS
- */
+
 public class FrameLocalOferta extends javax.swing.JFrame {
 
     /**
