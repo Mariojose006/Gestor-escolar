@@ -9,16 +9,31 @@ import java.util.ArrayList;
 
 public class Curso {
     private String nome;
+    private String disciplinas[];
     
-    private ArrayList<Disciplina> disciplina = new ArrayList<Disciplina>();
+    
+    
 
     public String getNome() {
         return nome;
     }
 
-    public ArrayList<Disciplina> getDisciplina() {
-        return disciplina;
+    /**
+     * @return the disciplinas
+     */
+    public String[] getDisciplinas() {
+        return disciplinas;
     }
+
+    /**
+     * @param disciplinas the disciplinas to set
+     */
+    public void setDisciplinas(String[] disciplinas) {
+        this.disciplinas = disciplinas;
+    }
+
+    
+
     
     
 }

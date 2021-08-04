@@ -29,24 +29,14 @@ public class FrameAluno extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        AA = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("MEU CURSO");
+        jMenu1.setText("Meu curso");
 
-        AA.setText("DISCIPLINAS");
-        AA.setActionCommand("HORÁRIO");
-        AA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AAActionPerformed(evt);
-            }
-        });
-        jMenu1.add(AA);
-
-        jMenuItem2.setText("HORÁRIO");
+        jMenuItem2.setText("Ver notas");
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -69,10 +59,6 @@ public class FrameAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void AAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,7 +96,6 @@ public class FrameAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem AA;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

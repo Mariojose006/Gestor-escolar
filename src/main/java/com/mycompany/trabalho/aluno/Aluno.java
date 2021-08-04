@@ -11,10 +11,35 @@ import com.mycompany.trabalho.Pessoa;
 
 public class Aluno extends Pessoa{
    
-   private Curso curso;  
+   private Curso curso; 
+   private int notas[];
+
+    
 
     public Aluno(Curso curso, String nome, String email, String telefone, String login, String senha) {
         super(nome, email, telefone, login, senha);
+       
+
+    }
+
+    public Aluno() {
+    }
+
+    
+    public int[] getNotas() {
+        return notas;
+    }
+
+    
+    public void setNotas(int[] notas) {
+        this.notas = notas;
+    }
+   
+   public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
         this.curso = curso;
     }
 }
