@@ -4,36 +4,45 @@
  */
 package com.mycompany.trabalho;
 
-import java.io.BufferedReader;
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 
-public class entidades {
+public class Entidades {
 
-    public entidades() {
+    public Entidades() {
+    	
+    	
     }
 
-    public static void escrever(String valor[], String classe, int n) throws IOException {
-        
-        int i; 
-        FileWriter arq = new FileWriter("d:\\" + classe + ".txt");
-        PrintWriter gravarArq = new PrintWriter(arq);
+   public static void escrever(Object objeto, String path) throws IOException {
+	   Gson gson = new Gson();
+	   String json = gson.toJson(objeto);
+	   try {
+			FileWriter writer = new FileWriter(path);
+			writer.write(json);
+			writer.close();
 
-        for (i = 1; i <= n; i++) {
-            gravarArq.printf("%n", valor[i] + ";");
-        }
-        arq.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-        System.out.printf("\nOs dados da classe " + classe + "  \"d:\\" + classe +".txt  \".\n");
-    }
+		System.out.println(json);
 
-   public static void escrever(String valor[]) throws IOException {
-       //leitura do arquivo
-   }
+	    }
+	public static Object ler(String path) throws JsonSyntaxException, JsonIOException, FileNotFoundException {
+		Gson gson = new Gson();
+	    
+	    // 1. JSON file to Java object
+	    Object object = gson.fromJson(new FileReader(path), Object.class);
+	    
+	    return object;
+	}
+	
    }
 
