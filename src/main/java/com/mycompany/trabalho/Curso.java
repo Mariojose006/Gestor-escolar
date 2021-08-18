@@ -32,6 +32,10 @@ public class Curso {
     public void setDisciplinas(String[] disciplinas) {
         this.disciplinas = disciplinas;
     }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     
 

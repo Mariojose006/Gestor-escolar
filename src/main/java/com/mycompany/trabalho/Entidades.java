@@ -20,8 +20,9 @@ public class Entidades {
     	
     }
 
-   public static void escrever(Object objeto, String path) throws IOException {
-	   Gson gson = new Gson();
+        public static void escrever(Object objeto) throws IOException {
+	   String path = null;
+           Gson gson = new Gson();
 	   String json = gson.toJson(objeto);
 	   try {
 			FileWriter writer = new FileWriter(path);
