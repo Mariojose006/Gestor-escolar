@@ -5,7 +5,12 @@
 
 package com.mycompany.trabalho;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 
 public class Curso {
@@ -15,7 +20,13 @@ public class Curso {
     
     
 
-    public String getNome() {
+    public Curso(String nome, String[] disciplinas) {
+		super();
+		this.nome = nome;
+		this.disciplinas = disciplinas;
+	}
+
+	public String getNome() {
         return nome;
     }
 
@@ -36,9 +47,35 @@ public class Curso {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     
+    public String toJSON() {
+        Curso cursoAux = new Curso(getNome(), getDisciplinas());
+    	Gson gson = new Gson();
+        String json = gson.toJson(cursoAux);
+        return json;
+    }
+    
+    public static String toJSON(List<Curso> cursos) {
+        Gson gson = new Gson();
+        String json = gson.toJson(cursos);
+        return json;
+    }
+    
+    public static Curso toCurso(String conteudo) {
+        Gson gson = new Gson();
+        Curso curso = gson.fromJson(conteudo, Curso.class);
 
+        return curso;
+    }
+
+    public static List<Curso> toCursos(String conteudo) {
+        Gson gson = new Gson();
+        Type cursosTipo = new TypeToken<ArrayList<Curso>>() {
+        }.getType();	
+        List<Curso> cursos = gson.fromJson(conteudo, cursosTipo);
+
+        return cursos;
+    }
     
     
 }

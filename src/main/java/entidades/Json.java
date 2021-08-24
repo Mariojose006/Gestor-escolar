@@ -8,18 +8,20 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class Json {
-	 public static String toJSON(Object pessoa) {
+	 	 //Já foi implementado dentro das Classes: Pessoa, Aluno, cruso e Professor
+		public static String toJSON(Object pessoa) {
 	        Gson gson = new Gson();
 	        String json = gson.toJson(pessoa);
 	        return json;
 	    }
-
+		
 	    public static String toJSON(List<Pessoa> contatos) {
 	        Gson gson = new Gson();
 	        String json = gson.toJson(contatos);
 	        return json;
 	    }
-
+		
+		
 	    public static Pessoa toPessoa(String conteudo) {
 	        Gson gson = new Gson();
 	        Pessoa pessoa = gson.fromJson(conteudo, Pessoa.class);

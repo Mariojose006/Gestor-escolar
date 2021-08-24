@@ -18,7 +18,7 @@ public class Arquivo {
 
         // varrendo o conteúdo do arquivo linha por linha
         while (leitor.hasNextLine()) {
-            conteudo.append(leitor.nextLine()).append("\n");
+            conteudo.append(leitor.nextLine()).append("\r \n");
         }
 
         return conteudo.toString();
@@ -35,7 +35,7 @@ public class Arquivo {
             bwArquivo = new BufferedWriter(fwArquivo);
 
             // escrevendo String no arquivo e adicionando caracter para criar nova linha
-            bwArquivo.write(conteudo + '\n');
+            bwArquivo.write(conteudo + "\r \n");
 
             // fechando o arquivo
             bwArquivo.close();

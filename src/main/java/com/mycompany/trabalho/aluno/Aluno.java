@@ -4,7 +4,12 @@
  */
 package com.mycompany.trabalho.aluno;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.mycompany.trabalho.Curso;
 import com.mycompany.trabalho.Pessoa;
 
@@ -45,10 +50,35 @@ public class Aluno extends Pessoa{
     }
     //toJson
     public String toJSON() {
-        Aluno alunoAux = null; //retornar objeto aqui
+        Aluno alunoAux = new Aluno(getCurso(), getNome(), getEmail(), getTelefone(), getLogin(), getSenha());
     	Gson gson = new Gson();
         String json = gson.toJson(alunoAux);
         return json;
     }
     
+    public static String toJSON(List<Aluno> alunos) {
+        Gson gson = new Gson();
+        String json = gson.toJson(alunos);
+        return json;
+    }
+    
+    public static Aluno toAluno(String conteudo) {
+        Gson gson = new Gson();
+        Aluno aluno = gson.fromJson(conteudo, Aluno.class);
+
+        return aluno;
+    }
+
+    public static List<Aluno> toAlunos(String conteudo) {
+        Gson gson = new Gson();
+        Type pessoasTipo = new TypeToken<ArrayList<Pessoa>>() {
+        }.getType();	
+        List<Aluno> alunos = gson.fromJson(conteudo, pessoasTipo);
+
+        return alunos;
+    }
+
 }
+    
+    
+    
