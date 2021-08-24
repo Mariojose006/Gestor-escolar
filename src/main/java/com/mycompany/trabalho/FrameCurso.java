@@ -10,6 +10,15 @@ import javax.swing.JFrame;
 import jdk.internal.net.http.common.Utils;
 
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+
 public class FrameCurso extends javax.swing.JFrame {
 
     /**
@@ -96,10 +105,24 @@ public class FrameCurso extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ private static String lerArquivo(String caminho) throws FileNotFoundException {
 
+        StringBuilder conteudo = new StringBuilder();
+
+        File arquivo = new File(caminho);
+
+        Scanner leitor = new Scanner(arquivo);
+
+        // varrendo o conteúdo do arquivo linha por linha
+        while (leitor.hasNextLine()) {
+            conteudo.append(leitor.nextLine()).append("\n");
+        }
+
+        return conteudo.toString();
+    }
     private void btncadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadActionPerformed
         
-        FileWriter writeFile = null;
+        /*FileWriter writeFile = null;
         JsonObject object = new JsonObject();
         object.addProperty("Curso",txtCurso.getText());
         object.addProperty("Disciplina", txtDisciplina.getText());
@@ -113,7 +136,37 @@ public class FrameCurso extends javax.swing.JFrame {
              catch(IOException e){
 			e.printStackTrace();
 		}
-            System.out.println(object);
+            System.out.println(object);*/
+      
+         
+        FileWriter fwArquivo;
+        BufferedWriter bwArquivo;
+        
+        JsonObject object = new JsonObject();
+        
+        try {
+            File arquivo = new File("saida.txt");
+
+            //Se o arquivo já existir, então abrir para concatenação, caso contrário criar novo arquivo
+            fwArquivo = new FileWriter(arquivo, false);
+            bwArquivo = new BufferedWriter(fwArquivo);
+
+            // escrevendo String no arquivo e adicionando caracter para criar nova linha
+            bwArquivo.write(txtCurso.getText() + '\n');
+            bwArquivo.write(txtDisciplina.getText() + '\n');
+
+            // fechando o arquivo
+            bwArquivo.close();
+            fwArquivo.close();
+
+        } catch (IOException e) {
+            System.err.println("Erro ao tentar escrever no arquivo: " + e.toString());
+}         
+            
+            
+            
+            
+            
     }//GEN-LAST:event_btncadActionPerformed
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
