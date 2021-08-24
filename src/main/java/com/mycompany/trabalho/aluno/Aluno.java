@@ -4,6 +4,7 @@
  */
 package com.mycompany.trabalho.aluno;
 
+import com.google.gson.Gson;
 import com.mycompany.trabalho.Curso;
 import com.mycompany.trabalho.Pessoa;
 
@@ -42,4 +43,12 @@ public class Aluno extends Pessoa{
     public void setCurso(Curso curso) {
         this.curso = curso;
     }
+    //toJson
+    public String toJSON() {
+        Aluno alunoAux = null; //retornar objeto aqui
+    	Gson gson = new Gson();
+        String json = gson.toJson(alunoAux);
+        return json;
+    }
+    
 }

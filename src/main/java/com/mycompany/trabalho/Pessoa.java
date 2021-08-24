@@ -6,6 +6,8 @@ package com.mycompany.trabalho;
 
 
 public class Pessoa {
+	private static int idAtual = 0;
+	private int id;
     private String nome;
     private String email;
     private String telefone;
@@ -18,14 +20,24 @@ public class Pessoa {
         this.telefone = telefone;
         this.login = login;
         this.senha = senha;
+        this.id = idAtual++;
     }
 
     public Pessoa() {
+    	this.id = idAtual++;
     }
     
     
+    
+    public int getId() {
+		return id;
+	}
 
-    public String getNome() {
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
         return nome;
     }
 
