@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+
 public class Arquivo {
 	public static String lerArquivo(String caminho) throws FileNotFoundException {
 
@@ -17,9 +18,9 @@ public class Arquivo {
         Scanner leitor = new Scanner(arquivo);
 
         // varrendo o conteúdo do arquivo linha por linha
-        while (leitor.hasNextLine()) {
-            conteudo.append(leitor.nextLine()).append("\r \n");
-        }
+        while (leitor.hasNextLine()) {              
+               conteudo.append(leitor.nextLine()).append("\r\n");
+         }
 
         return conteudo.toString();
     }
@@ -31,11 +32,12 @@ public class Arquivo {
             File arquivo = new File(caminho);
 
             //Se o arquivo já existir, então abrir para concatenação, caso contrário criar novo arquivo
-            fwArquivo = new FileWriter(arquivo, false);
+            fwArquivo = new FileWriter(arquivo, true);
+            //fwArquivo.append(conteudo + "\r\n");
             bwArquivo = new BufferedWriter(fwArquivo);
-
+            
             // escrevendo String no arquivo e adicionando caracter para criar nova linha
-            bwArquivo.write(conteudo + "\r \n");
+            bwArquivo.write(conteudo + "\r\n");
 
             // fechando o arquivo
             bwArquivo.close();

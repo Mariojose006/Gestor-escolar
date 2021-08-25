@@ -1,0 +1,2 @@
+{"id":1,"nome":"Adrian","email":"adria@ice.ufjf.br","telefone":"32998040251","login":"adrian","senha":"adrian"}
+{"id":3,"nome":"Mario","email":"mario@ufjf.br","telefone":"329980452","login":"mario","senha":"mario"}
