@@ -71,7 +71,7 @@ public class Aluno extends Pessoa{
 
     public static List<Aluno> toAlunos(String conteudo) {
         Gson gson = new Gson();
-        Type pessoasTipo = new TypeToken<ArrayList<Pessoa>>() {
+        Type pessoasTipo = new TypeToken<ArrayList<Aluno>>() {
         }.getType();	
         List<Aluno> alunos = gson.fromJson(conteudo, pessoasTipo);
 

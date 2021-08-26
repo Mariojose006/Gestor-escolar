@@ -4,6 +4,13 @@
  */
 package com.mycompany.trabalho;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.mycompany.trabalho.aluno.Aluno;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Pessoa {
 	private static int idAtual = 0;
@@ -24,7 +31,6 @@ public class Pessoa {
     }
 
     public Pessoa() {
-    	this.id = idAtual++;
     }
     
     
@@ -76,7 +82,24 @@ public class Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    //toJson
+
     
+    public static Pessoa toPessoa(String conteudo) {
+        Gson gson = new Gson();
+        Pessoa pessoa = gson.fromJson(conteudo, Pessoa.class);
+
+        return pessoa;
+    }
+
+    public static List<Pessoa> toPessoas(String conteudo) {
+        Gson gson = new Gson();
+        Type pessoasTipo = new TypeToken<ArrayList<Pessoa>>() {
+        }.getType();	
+        List<Pessoa> pessoas = gson.fromJson(conteudo, pessoasTipo);
+
+        return pessoas;
+    }
     
     
 }
