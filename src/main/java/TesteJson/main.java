@@ -1,11 +1,12 @@
 package TesteJson;
 
-import com.mycompany.trabalho.aluno.Aluno;
 
+
+import com.mycompany.trabalho.professor.Professor;
 import entidades.Arquivo;
 import entidades.util;
 import java.io.FileNotFoundException;
-import java.util.List;
+
 
 public class main {
 
@@ -24,11 +25,10 @@ public class main {
                 
                 //List<Aluno> alunos = Aluno.toAlunos("./dadosAlunos.txt");
                 
-                //for(Aluno a:alunos){
-                //    System.out.println(a.toString());
-                //}
+                Professor prof3 = new Professor("TesteProfessor", "gleiph@ufjf.br", "3299545256", "TesteProfe", "Profe");
+                Arquivo.escreverArquivo("./dadosProfessores.txt", prof3.toJSON());
                 
-                util.validaLogin("asasa", "asasassd");
+                boolean a = util.validaLogin("TesteProfe", "Profe");
                 
                 
 	}
