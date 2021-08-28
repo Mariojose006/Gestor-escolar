@@ -7,7 +7,6 @@ package com.mycompany.trabalho.professor;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.trabalho.Pessoa;
@@ -16,6 +15,9 @@ public class Professor extends Pessoa{
     
     public Professor(String nome, String email, String telefone, String login, String senha) {
         super(nome, email, telefone, login, senha);
+    }
+
+   public Professor() {
     }
     
     public String toJSON() {

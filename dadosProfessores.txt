@@ -8,3 +8,4 @@
 {"id":5,"nome":"Gleiph","email":"gleiph@ufjf.br","telefone":"3299545256","login":"gleiph","senha":"gleiph"}
 {"id":1,"nome":"TesteProfessor","email":"gleiph@ufjf.br","telefone":"3299545256","login":"TesteProfe","senha":"Profe"}
 {"id":1,"nome":"TesteProfessor","email":"gleiph@ufjf.br","telefone":"3299545256","login":"TesteProfe","senha":"Profe"}
+{"id":1,"nome":"TesteProfessor","email":"gleiph@ufjf.br","telefone":"3299545256","login":"TesteProfe","senha":"Profe"}

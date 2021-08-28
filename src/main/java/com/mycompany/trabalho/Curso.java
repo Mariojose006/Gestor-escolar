@@ -26,6 +26,12 @@ public class Curso {
 		this.disciplinas = disciplinas;
 	}
 
+    Curso() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
 	public String getNome() {
         return nome;
     }

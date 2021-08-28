@@ -5,6 +5,9 @@
 package com.mycompany.trabalho;
 
 
+import entidades.Arquivo;
+
+
 public class FrameLocalOferta extends javax.swing.JFrame {
 
     /**
@@ -77,6 +80,12 @@ public class FrameLocalOferta extends javax.swing.JFrame {
 
     private void txtcadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcadActionPerformed
         // TODO add your handling code here:
+        LocalOferta l1 = new LocalOferta();
+        l1.setSala(txtSala.getText());
+    
+        
+        Arquivo.escreverArquivo(".dadosLocalOferta", l1.toString());
+        
     }//GEN-LAST:event_txtcadActionPerformed
 
     /**

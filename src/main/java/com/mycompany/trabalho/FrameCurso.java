@@ -6,6 +6,8 @@ package com.mycompany.trabalho;
 import java.io.FileWriter;
 import java.io.IOException;
 import com.google.gson.JsonObject;
+import com.mycompany.trabalho.aluno.Aluno;
+import entidades.Arquivo;
 import javax.swing.JFrame;
 import jdk.internal.net.http.common.Utils;
 
@@ -105,63 +107,19 @@ public class FrameCurso extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
- private static String lerArquivo(String caminho) throws FileNotFoundException {
-
-        StringBuilder conteudo = new StringBuilder();
-
-        File arquivo = new File(caminho);
-
-        Scanner leitor = new Scanner(arquivo);
-
-        // varrendo o conteúdo do arquivo linha por linha
-        while (leitor.hasNextLine()) {
-            conteudo.append(leitor.nextLine()).append("\n");
-        }
-
-        return conteudo.toString();
-    }
+ 
     private void btncadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadActionPerformed
         
-        /*FileWriter writeFile = null;
-        JsonObject object = new JsonObject();
-        object.addProperty("Curso",txtCurso.getText());
-        object.addProperty("Disciplina", txtDisciplina.getText());
-       
-             try{
-			writeFile = new FileWriter("saida.json");
-			//Escreve no arquivo conteudo do Objeto JSON
-			writeFile.write(object.toString());
-			writeFile.close();
-		}
-             catch(IOException e){
-			e.printStackTrace();
-		}
-            System.out.println(object);*/
-      
-         
-        FileWriter fwArquivo;
-        BufferedWriter bwArquivo;
+        Curso c1 = new Curso();
+        String[] disciplina = null; 
+        disciplina[0] = txtDisciplina.getText();
+        c1.setNome(txtCurso.getText());
+        c1.setDisciplinas(disciplina);
         
-        JsonObject object = new JsonObject();
         
-        try {
-            File arquivo = new File("saida.txt");
-
-            //Se o arquivo já existir, então abrir para concatenação, caso contrário criar novo arquivo
-            fwArquivo = new FileWriter(arquivo, false);
-            bwArquivo = new BufferedWriter(fwArquivo);
-
-            // escrevendo String no arquivo e adicionando caracter para criar nova linha
-            bwArquivo.write(txtCurso.getText() + '\n');
-            bwArquivo.write(txtDisciplina.getText() + '\n');
-
-            // fechando o arquivo
-            bwArquivo.close();
-            fwArquivo.close();
-
-        } catch (IOException e) {
-            System.err.println("Erro ao tentar escrever no arquivo: " + e.toString());
-}         
+        Arquivo.escreverArquivo(".dadosCurso", c1.toString());
+        
+             
             
             
             

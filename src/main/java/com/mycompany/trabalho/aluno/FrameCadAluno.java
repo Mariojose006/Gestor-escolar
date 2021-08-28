@@ -4,6 +4,8 @@
  */
 package com.mycompany.trabalho.aluno;
 
+import com.mycompany.trabalho.Curso;
+import entidades.Arquivo;
 import java.util.HashSet;
 
 public class FrameCadAluno extends javax.swing.JFrame {
@@ -129,12 +131,18 @@ public class FrameCadAluno extends javax.swing.JFrame {
 
     private void cadAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadAlunoActionPerformed
         // TODO add your handling code here:
-        
+       
         Aluno a1 = new Aluno();
-        
+        String[] disciplina = null;
+        String cursoAluno = null;
+        a1.setCurso(new Curso(cursoAluno,disciplina));
         a1.setNome(txtNome.getText());
         a1.setEmail(txtEmail.getText());
+        a1.setTelefone(txtTel.getText());
+        a1.setLogin(txtLogin.getText());
+        a1.setSenha(txtSenha.getText());
         
+        Arquivo.escreverArquivo(".dadosAlunos", a1.toString());
         
     }//GEN-LAST:event_cadAlunoActionPerformed
 

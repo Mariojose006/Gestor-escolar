@@ -5,6 +5,9 @@
 package com.mycompany.trabalho.professor;
 
 
+import entidades.Arquivo;
+
+
 public class FrameCadProfessor extends javax.swing.JFrame {
 
     /**
@@ -72,6 +75,11 @@ public class FrameCadProfessor extends javax.swing.JFrame {
         });
 
         btnCad.setText("CADASTRAR");
+        btnCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +149,7 @@ public class FrameCadProfessor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
@@ -151,6 +159,21 @@ public class FrameCadProfessor extends javax.swing.JFrame {
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btncancelActionPerformed
+
+    private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
+        // TODO add your handling code here:
+        Professor p1 = new Professor();
+              
+        p1.setNome(txtNome.getText());
+        p1.setEmail(txtEmail.getText());
+        p1.setTelefone(txtTel.getText());
+        p1.setLogin(txtLogin.getText());
+        p1.setSenha(txtSenha.getText());
+        
+        Arquivo.escreverArquivo(".dadosProfessor", p1.toString());
+        
+        
+    }//GEN-LAST:event_btnCadActionPerformed
 
     /**
      * @param args the command line arguments

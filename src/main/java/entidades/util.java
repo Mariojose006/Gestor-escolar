@@ -26,7 +26,7 @@ public class util {
             usuarios.addAll(administrador);
             //achar usuario
             int tam = usuarios.size();
-            Pessoa p = new Pessoa();
+            Pessoa p = new Pessoa() ;
             boolean s = false,l = false;
             for(int i = 0; i<= (tam - 1);i++)
             {
