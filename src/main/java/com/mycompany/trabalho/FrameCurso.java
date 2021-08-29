@@ -117,7 +117,7 @@ public class FrameCurso extends javax.swing.JFrame {
         c1.setDisciplinas(disciplina);
         
         
-        Arquivo.escreverArquivo(".dadosCurso", c1.toString());
+        Arquivo.escreverArquivo(".dadosCurso", c1.toJSON());
         
              
             
