@@ -12,9 +12,10 @@ import java.util.Scanner;
 
 public class Arquivo {
 	public static ArrayList lerArquivo(String caminho) throws FileNotFoundException {
-
-        //StringBuilder conteudo = new StringBuilder();
         ArrayList leitura = new ArrayList();
+        try{
+           //StringBuilder conteudo = new StringBuilder();
+       
         File arquivo = new File(caminho);
 
         Scanner leitor = new Scanner(arquivo);
@@ -25,8 +26,14 @@ public class Arquivo {
               leitura.add((leitor.nextLine()));
          }
 
+        
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Arquivo não encontrado!");
+            
+        }
         return leitura;
-    }
+        }
 
     public static void escreverArquivo(String caminho, String conteudo) {
         FileWriter fwArquivo;
