@@ -170,7 +170,7 @@ public class FrameCadProfessor extends javax.swing.JFrame {
         p1.setLogin(txtLogin.getText());
         p1.setSenha(txtSenha.getText());
         
-        Arquivo.escreverArquivo(".dadosProfessor", p1.toJSON());
+        Arquivo.escreverArquivo("./dadosProfessor.txt", p1.toJSON());
         
         
     }//GEN-LAST:event_btnCadActionPerformed

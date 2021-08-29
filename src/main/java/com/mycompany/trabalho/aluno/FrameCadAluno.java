@@ -142,7 +142,7 @@ public class FrameCadAluno extends javax.swing.JFrame {
         a1.setLogin(txtLogin.getText());
         a1.setSenha(txtSenha.getText());
         
-        Arquivo.escreverArquivo("./dadosAlunos", a1.toJSON());
+        Arquivo.escreverArquivo("./dadosAlunos.txt", a1.toJSON());
         
     }//GEN-LAST:event_cadAlunoActionPerformed
 

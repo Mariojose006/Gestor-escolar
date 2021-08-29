@@ -4,6 +4,7 @@ entidades/util.class
 com/mycompany/trabalho/professor/Professor$1.class
 com/mycompany/trabalho/FrameLocalOferta$2.class
 com/mycompany/trabalho/aluno/FrameCadAluno$1.class
+com/mycompany/trabalho/professor/FrameCadProfessor$5.class
 com/mycompany/trabalho/aluno/FrameAluno.class
 com/mycompany/trabalho/Curso.class
 com/mycompany/trabalho/adm/FrameAdm.class
@@ -13,12 +14,12 @@ com/mycompany/trabalho/FrameCurso.class
 com/mycompany/trabalho/professor/FrameCadProfessor$3.class
 com/mycompany/trabalho/Login$3.class
 com/mycompany/trabalho/aluno/FrameCadAluno.class
+com/mycompany/trabalho/FrameLocalOferta$3.class
 com/mycompany/trabalho/aluno/Aluno$1.class
 com/mycompany/trabalho/aluno/Aluno.class
 com/mycompany/trabalho/FrameLocalOferta$1.class
 com/mycompany/trabalho/FrameCurso$1.class
 com/mycompany/trabalho/professor/FrameCadProfessor$1.class
-TesteJson/main.class
 com/mycompany/trabalho/professor/FrameCadProfessor.class
 com/mycompany/trabalho/professor/FrameProfessor$2.class
 entidades/Json$1.class
@@ -29,7 +30,8 @@ com/mycompany/trabalho/Login.class
 com/mycompany/trabalho/Login$2.class
 com/mycompany/trabalho/adm/Administrador.class
 com/mycompany/trabalho/aluno/FrameCadAluno$2.class
-com/mycompany/trabalho/Entidades.class
+com/mycompany/trabalho/adm/FrameAdm$2.class
+com/mycompany/trabalho/FrameCurso$4.class
 com/mycompany/trabalho/professor/FrameProfessor$1.class
 com/mycompany/trabalho/Login$1.class
 com/mycompany/trabalho/professor/Professor.class
@@ -39,3 +41,5 @@ com/mycompany/trabalho/professor/FrameCadProfessor$2.class
 com/mycompany/trabalho/FrameCurso$2.class
 com/mycompany/trabalho/LocalOferta.class
 com/mycompany/trabalho/FrameLocalOferta.class
+com/mycompany/trabalho/Pessoa$1.class
+com/mycompany/trabalho/Login$4.class

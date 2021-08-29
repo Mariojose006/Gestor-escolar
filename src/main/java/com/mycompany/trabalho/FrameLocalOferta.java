@@ -90,7 +90,7 @@ public class FrameLocalOferta extends javax.swing.JFrame {
         l1.setSala(txtSala.getText());
     
         
-        Arquivo.escreverArquivo(".dadosLocalOferta", l1.toJSON());
+        Arquivo.escreverArquivo("./dadosLocalOferta", l1.toJSON());
         
         
     }//GEN-LAST:event_txtcadActionPerformed
