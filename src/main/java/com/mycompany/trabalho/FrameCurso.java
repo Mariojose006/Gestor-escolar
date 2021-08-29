@@ -50,6 +50,12 @@ public class FrameCurso extends javax.swing.JFrame {
 
         jLabel1.setText("Curso:");
 
+        txtCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCursoActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Disciplina:");
 
         btncancel.setText("CANCELAR");
@@ -132,6 +138,10 @@ public class FrameCurso extends javax.swing.JFrame {
         //FrameCurso.;
 
     }//GEN-LAST:event_btncancelActionPerformed
+
+    private void txtCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCursoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,18 @@
  */
 package com.mycompany.trabalho.professor;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+
 
 public class FrameProfessor extends javax.swing.JFrame {
 
@@ -12,6 +24,52 @@ public class FrameProfessor extends javax.swing.JFrame {
      */
     public FrameProfessor() {
         initComponents();
+        // Label Result
+		final JLabel lblResult = new JLabel("ALUNOS", JLabel.CENTER);		// Create JLabel
+		lblResult.setBounds(230, 30, 200, 30);												// Set size and position JLabel
+		getContentPane().add(lblResult);
+		
+		// Table
+		JTable table = new JTable();				// Create JTable
+		getContentPane().add(table);				// add JTable in GUI
+				
+		// Table Model
+		final DefaultTableModel model = (DefaultTableModel)table.getModel();
+		model.addColumn("id");              	 // Create Column and add to Jtable
+		model.addColumn("nome");					// Create Column and add to Jtable
+		model.addColumn("email");
+                model.addColumn("telefone");
+                model.addColumn("login");
+                model.addColumn("senha");
+        
+		// ScrollPane
+		JScrollPane scroll = new JScrollPane(table);		// Create Scroll in Jtable
+		scroll.setBounds(0, 70, 500, 300);
+		getContentPane().add(scroll);
+                
+                
+						File file = new File("./dadosAlunos.txt");
+						try {
+							BufferedReader br = new BufferedReader(new FileReader(file));	// Read file
+							String line;													// in Line
+							int row = 0 ;													// Set row
+							while ((line = br.readLine()) != null ) {	
+								String[] arr = line.split(",");								// split ','  (CSV file)
+								model.addRow(new Object[0]);
+								model.setValueAt(arr[0], row,0);							// add data first to row0
+								model.setValueAt(arr[1], row,1);							// add data second to row1
+								model.setValueAt(arr[2], row,2);							// add data third to row2
+								model.setValueAt(arr[3], row,3);
+                                                               // model.setValueAt(arr[4], row,4);
+                                                                //model.setValueAt(arr[5], row,5);
+                                                                //model.setValueAt(arr[6], row,6);
+                                                                row++;
+							}
+							br.close();										
+						} catch (IOException ex) {
+							ex.printStackTrace();
+						}
+					
     }
 
     /**
@@ -31,8 +89,6 @@ public class FrameProfessor extends javax.swing.JFrame {
         txtMatricula = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableAluno = new javax.swing.JTable();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -58,19 +114,6 @@ public class FrameProfessor extends javax.swing.JFrame {
 
         jLabel2.setText("Digite a matrícula para buscar o aluno:");
 
-        tableAluno.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tableAluno);
-
         jMenu3.setText("Cadastros");
         jMenuBar2.add(jMenu3);
 
@@ -84,7 +127,7 @@ public class FrameProfessor extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(535, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -96,7 +139,6 @@ public class FrameProfessor extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(99, 99, 99))))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,8 +150,7 @@ public class FrameProfessor extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
 
         pack();
@@ -166,9 +207,7 @@ public class FrameProfessor extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JTable tableAluno;
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables
 }

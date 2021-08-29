@@ -35,6 +35,12 @@ public class FrameLocalOferta extends javax.swing.JFrame {
 
         jLabel1.setText("Sala:");
 
+        txtSala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSalaActionPerformed(evt);
+            }
+        });
+
         txtcancel.setText("CANCELAR");
 
         txtcad.setText("CADASTRAR");
@@ -86,7 +92,12 @@ public class FrameLocalOferta extends javax.swing.JFrame {
         
         Arquivo.escreverArquivo(".dadosLocalOferta", l1.toJSON());
         
+        
     }//GEN-LAST:event_txtcadActionPerformed
+
+    private void txtSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSalaActionPerformed
 
     /**
      * @param args the command line arguments
