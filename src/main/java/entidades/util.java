@@ -1,6 +1,7 @@
 package entidades;
 
 import com.mycompany.trabalho.Pessoa;
+import com.mycompany.trabalho.adm.Administrador;
 import com.mycompany.trabalho.adm.FrameAdm;
 import com.mycompany.trabalho.aluno.Aluno;
 import com.mycompany.trabalho.aluno.FrameAluno;
@@ -8,6 +9,7 @@ import com.mycompany.trabalho.professor.FrameProfessor;
 import com.mycompany.trabalho.professor.Professor;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class util {
@@ -21,7 +23,7 @@ public class util {
             
             ArrayList<String> administrador = new ArrayList<String>();
             administrador.addAll(Arquivo.lerArquivo("./dadosAdministrador.txt"));
-            
+          
             //contatenar as duas listas
             ArrayList<String> usuarios = new ArrayList<String>();
             usuarios.addAll(alunos);
