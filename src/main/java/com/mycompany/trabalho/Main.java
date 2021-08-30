@@ -14,7 +14,7 @@ import entidades.Arquivo;
  */
 public class Main {
     public static void main(String[] args) {
-        Administrador adm1 = new Administrador("mario", "mario@adm.ufjf.br", "3265585412", "ADMmario", "mario");
-        Arquivo.escreverArquivo("./dadosAdministrador.txt", adm1.toJSON());
+        new Login().setVisible(true);
+       
     }
 }

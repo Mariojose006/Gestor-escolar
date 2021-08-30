@@ -1,1 +1,2 @@
-{"id":0,"nome":"ADM","email":"teste@teste.com","telefone":"1313131","login":"ADM"}
+{"id":2,"nome":"Gleiph","email":"gleiph@ufjf.br","telefone":"32558741254","login":"PRFgleiph","senha":"gleiph"}
+{"id":1,"nome":"Marcelo","email":"marcelo@ufjf.br","telefone":"3266987452","login":"PRFmarcelo","senha":"marcelo"}

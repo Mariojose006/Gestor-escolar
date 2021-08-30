@@ -21,7 +21,7 @@ public class util {
             alunos.addAll(Arquivo.lerArquivo("./dadosAlunos.txt"));
                        
             ArrayList<String> professores = new ArrayList<String>();
-            professores.addAll(Arquivo.lerArquivo("./dadosProfessor.txt"));
+            professores.addAll(Arquivo.lerArquivo("./dadosProfessores.txt"));
             
 
             
@@ -42,7 +42,7 @@ public class util {
                 p = Pessoa.toPessoa(usuarios.get(i));
                 String tipo = p.getLogin().substring(0, 3);
                 
-                //System.out.println(p.getNome()+" - "+p.getLogin()+" - "+p.getSenha());
+                System.out.println(p.getNome()+" - "+p.getLogin()+" - "+p.getSenha());
                 //System.out.println(p.getLogin().equals(usuario)+""+p.getSenha().equals(senha)+""+p.getLogin().contains("ALU"));
                 //System.out.println(al.getLogin());
                 System.out.println(tipo);

@@ -5,25 +5,22 @@
 package com.mycompany.trabalho.adm;
 
 import com.google.gson.Gson;
-<<<<<<< HEAD
+import com.mycompany.trabalho.Pessoa;
+import java.util.List;
 import com.mycompany.trabalho.Pessoa;
 import com.mycompany.trabalho.aluno.Aluno;
-=======
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.trabalho.Pessoa;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
->>>>>>> main
 import java.util.List;
 
 public class Administrador extends Pessoa{
     
     public Administrador(String nome, String email, String telefone, String login, String senha) {
         super(nome, email, telefone, login, senha);
-    }
-<<<<<<< HEAD
-    
-    public String toJSON() {
+    }    
+    public String toJson() {
         Administrador admAux = new Administrador(this.getNome(), this.getEmail(), this.getTelefone(), this.getLogin(), this.getSenha());
     	Gson gson = new Gson();
         String json = gson.toJson(admAux);
@@ -36,7 +33,7 @@ public class Administrador extends Pessoa{
         return json;
     }
     
-=======
+
 
     public Administrador() {
     }
@@ -52,7 +49,7 @@ public class Administrador extends Pessoa{
         return json;
     }
     
-    public static String toJSON(List<Administrador> alunos) {
+    public static String toJson(List<Administrador> alunos) {
         Gson gson = new Gson();
         String json = gson.toJson(alunos);
         return json;
@@ -73,5 +70,4 @@ public class Administrador extends Pessoa{
 
         return adm;
     }
->>>>>>> main
 }

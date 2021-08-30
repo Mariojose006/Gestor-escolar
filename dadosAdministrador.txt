@@ -1,10 +1,2 @@
-<<<<<<< HEAD
-{"id":1,"nome":"adrian","email":"adrian@adm.ufjf.br","telefone":"32998040251","login":"ADMadrian","senha":"admin"}
-{"id":1,"nome":"mario","email":"mario@adm.ufjf.br","telefone":"3265585412","login":"ADMmario","senha":"mario"}
-=======
-
-{"id":0,"nome":"ADM","email":"teste@teste.com","telefone":"1313131","login":"ADM"}
-{"id":0,"nome":"ADM","email":"teste@teste.com","telefone":"1313131","login":"ADM"}
-{"id":0,"nome":"ADM","email":"teste@teste.com","telefone":"1313131","login":"ADM"}
-{"id":1,"nome":"ADM","email":"teste@teste.com","telefone":"1313131","login":"ADM"}
->>>>>>> main
+{"id":2,"nome":"Adrian","email":"adrian@ufjf.br","telefone":"3299802541","login":"ADMadrian","senha":"adrian"}
+{"id":3,"nome":"Mario","email":"mario@ufjf.br","telefone":"32665874521","login":"ADMmario","senha":"mario"}

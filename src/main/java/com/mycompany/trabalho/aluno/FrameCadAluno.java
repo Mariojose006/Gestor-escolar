@@ -53,6 +53,11 @@ public class FrameCadAluno extends javax.swing.JFrame {
         jLabel5.setText("Senha");
 
         jButton1.setText("CANCELAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         cadAluno.setText("CADASTRAR");
         cadAluno.addActionListener(new java.awt.event.ActionListener() {
@@ -145,11 +150,17 @@ public class FrameCadAluno extends javax.swing.JFrame {
             Arquivo.escreverArquivo("./dadosAlunos.txt", a1.toJSON());
         
             JOptionPane.showMessageDialog(rootPane,"Usuario cadastrado");
+            this.setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
         
     }//GEN-LAST:event_cadAlunoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

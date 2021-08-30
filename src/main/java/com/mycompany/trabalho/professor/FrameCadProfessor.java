@@ -6,6 +6,7 @@ package com.mycompany.trabalho.professor;
 
 
 import entidades.Arquivo;
+import javax.swing.JOptionPane;
 
 
 public class FrameCadProfessor extends javax.swing.JFrame {
@@ -158,6 +159,7 @@ public class FrameCadProfessor extends javax.swing.JFrame {
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_btncancelActionPerformed
 
     private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
@@ -170,7 +172,14 @@ public class FrameCadProfessor extends javax.swing.JFrame {
         p1.setLogin(txtLogin.getText());
         p1.setSenha(txtSenha.getText());
         
-        Arquivo.escreverArquivo("./dadosProfessor.txt", p1.toJSON());
+        try {
+            Arquivo.escreverArquivo("./dadosProfessores.txt", p1.toJSON());
+            JOptionPane.showMessageDialog(rootPane, "Professor cadastrado");
+            this.setVisible(false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e.getMessage());
+        }
+        
         
         
     }//GEN-LAST:event_btnCadActionPerformed
