@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 {"id":0,"nome":"Adrian Pereira Machado","email":"adrianpereira@ufjf.br","telefone":"32998040251","login":"ALNadrian","senha":"adrian"}
 {"id":1,"nome":"Mario José","email":"mariojose@ufjf.br","telefone":"3255845251","login":"ALNmario","senha":"mario"}
 {"id":2,"nome":"Andre Reis","email":"andrereis@ufjf.br","telefone":"36554211474","login":"ALNandre","senha":"andre"}
+=======
+{"id":0,"nome":"ADM","email":"teste@teste.com","telefone":"1313131","login":"ADM"}
+>>>>>>> main
