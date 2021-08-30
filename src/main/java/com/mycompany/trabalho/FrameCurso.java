@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -108,7 +109,7 @@ public class FrameCurso extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncad)
                     .addComponent(btncancel))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         pack();
@@ -120,7 +121,7 @@ public class FrameCurso extends javax.swing.JFrame {
         String[] disciplina = null; 
         disciplina[0] = txtDisciplina.getText();
         c1.setNome(txtCurso.getText());
-        c1.setDisciplinas(disciplina);
+        c1.setDisciplinas(null);
         
         
         Arquivo.escreverArquivo(".dadosCurso", c1.toJSON());

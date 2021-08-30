@@ -7,6 +7,7 @@ package com.mycompany.trabalho;
 
 import com.mycompany.trabalho.adm.Administrador;
 import entidades.Arquivo;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,6 +16,7 @@ import entidades.Arquivo;
 public class Main {
     public static void main(String[] args) {
         new Login().setVisible(true);
-       
     }
+    
+    
 }

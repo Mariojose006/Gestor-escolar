@@ -15,17 +15,17 @@ import com.google.gson.reflect.TypeToken;
 
 public class Curso {
     private String nome;
-    private String disciplinas[];
+    private ArrayList<String> disciplinas;
+
+    public Curso(String nome, ArrayList<String> disciplinas) {
+        this.nome = nome;
+        this.disciplinas = disciplinas;
+    }
     
     
     
 
-    public Curso(String nome, String[] disciplinas) {
-		super();
-		this.nome = nome;
-		this.disciplinas = disciplinas;
-	}
-
+    
     Curso() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -39,17 +39,18 @@ public class Curso {
     /**
      * @return the disciplinas
      */
-    public String[] getDisciplinas() {
+    public ArrayList<String> getDisciplinas() {    
         return disciplinas;
     }
 
     /**
      * @param disciplinas the disciplinas to set
      */
-    public void setDisciplinas(String[] disciplinas) {
+    
+    public void setDisciplinas(ArrayList<String> disciplinas) {
         this.disciplinas = disciplinas;
     }
-    
+
     public void setNome(String nome) {
         this.nome = nome;
     }

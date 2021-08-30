@@ -6,6 +6,7 @@ package com.mycompany.trabalho.aluno;
 
 import com.mycompany.trabalho.Curso;
 import entidades.Arquivo;
+import java.util.ArrayList;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
 
@@ -139,7 +140,7 @@ public class FrameCadAluno extends javax.swing.JFrame {
         Aluno a1 = new Aluno();
         String[] disciplina = null;
         String cursoAluno = null;
-        a1.setCurso(new Curso(cursoAluno,disciplina));
+        a1.setCurso(new Curso(cursoAluno,new ArrayList<>()));
         a1.setNome(txtNome.getText());
         a1.setEmail(txtEmail.getText());
         a1.setTelefone(txtTel.getText());
