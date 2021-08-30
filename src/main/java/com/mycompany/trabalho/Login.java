@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 
 public class Login extends javax.swing.JFrame {
@@ -106,9 +107,16 @@ public class Login extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             boolean valida = util.validaLogin(jTextField1.getText(), jTextField2.getText());
+            //JOptionPane.showMessageDialog(rootPane, valida);
+            if(valida){
+                this.setVisible(false);
+                
+            }
             // condicional comparando com o perfil e redirecionando para a tela correta ! 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+            
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

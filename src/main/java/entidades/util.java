@@ -9,6 +9,8 @@ import com.mycompany.trabalho.professor.Professor;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+import jdk.nashorn.api.tree.Tree;
 
 public class util {
 	public static boolean validaLogin(String usuario, String senha) throws FileNotFoundException {
@@ -17,7 +19,9 @@ public class util {
             alunos.addAll(Arquivo.lerArquivo("./dadosAlunos.txt"));
                        
             ArrayList<String> professores = new ArrayList<String>();
-            professores.addAll(Arquivo.lerArquivo("./dadosProfessores.txt"));
+            professores.addAll(Arquivo.lerArquivo("./dadosProfessor.txt"));
+            
+
             
             ArrayList<String> administrador = new ArrayList<String>();
             administrador.addAll(Arquivo.lerArquivo("./dadosAdministrador.txt"));
@@ -34,16 +38,22 @@ public class util {
             for(int i = 0; i<= (tam - 1);i++)
             {
                 p = Pessoa.toPessoa(usuarios.get(i));
+                String tipo = p.getLogin().substring(0, 3);
+                
+                //System.out.println(p.getNome()+" - "+p.getLogin()+" - "+p.getSenha());
+                //System.out.println(p.getLogin().equals(usuario)+""+p.getSenha().equals(senha)+""+p.getLogin().contains("ALU"));
                 //System.out.println(al.getLogin());
-                if(p.getLogin().equals(usuario)  && p.getSenha().equals(senha) && p.getLogin().contains("ALU")) {
+                System.out.println(tipo);
+                if(p.getLogin().equals(usuario)  && p.getSenha().equals(senha) && tipo.equals("ALN")) {
                     // logado
                     /*
                        aluno                  
                     */
                     FrameAluno fmAluno = new FrameAluno();
                     fmAluno.setVisible(true);
+                    
                     return true;
-                } else if(p.getLogin().equals(usuario)  && p.getSenha().equals(senha) && p.getLogin().contains("ADM")) {
+                } else if(p.getLogin().equals(usuario)  && p.getSenha().equals(senha) && tipo.equals("ADM")) {
                     // logado
                     /*
                        administrador 
@@ -51,7 +61,7 @@ public class util {
                     FrameAdm fmAdm = new FrameAdm();
                     fmAdm.setVisible(true);
                     return true;
-                }else if(p.getLogin().equals(usuario)  && p.getSenha().equals(senha) && p.getLogin().contains("PRF")) {
+                }else if(p.getLogin().equals(usuario)  && p.getSenha().equals(senha) && tipo.equals("PRF")) {
                     // logado
                     /*
                        professor 
@@ -64,6 +74,7 @@ public class util {
             if(((l == false) && (s == false)) ||((l == true) && (s == false))||((l == false) && (s == true)) )    
             {
                 System.out.println("usuário ou senha inválido");
+                JOptionPane.showMessageDialog(null, "usuário ou senha inválido");
             }
             return false;
 }

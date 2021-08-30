@@ -29,7 +29,7 @@ public class Arquivo {
         
         }
         catch(FileNotFoundException e){
-            System.out.println("Arquivo não encontrado!");
+            System.out.println("Arquivo não encontrado!" + caminho);
             
         }
         return leitura;
